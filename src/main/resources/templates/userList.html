@@ -4,26 +4,16 @@
 <meta charset="UTF-8" />
 <title>U＆Lbookmarker</title>
 </head>
+<!-- フォローしたいユーザーリスト -->
 <body>
 	<header>
 		<h1>ユーザーリスト</h1>
 	</header>
-	<table border="1">
-	<tr>
-		<th>ユーザーネーム</th>
-		<th>SNS名</th>
-		<th>URL</th>
-		<th>アカウントネーム</th>
-	</tr>
-	
-	<tr th:each="users : ${users}" th:object="${users}">
-		<td th:text="*{name}"></td>
-		<td th:text="*{snsName}"></td>
-		<td th:text="*{url}"></td>
-		<td th:text="*{accountName}"></td>
-		
-	</tr>
-	</table>
+	<ul th:object="${user}">
+		<li th:field=*{name}></li>	
+	</ul>
+	<p><a th:href="@{/}">ホームに戻る</a></p>
+	<p><a th:href="@{/user/add}">新規追加する</a></p>
 	
 </body>
 </html>

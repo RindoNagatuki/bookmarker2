@@ -4,13 +4,20 @@
 <meta charset="UTF-8" />
 <title>Document</title>
 </head>
+<!-- フォローユーザー登録 -->
 <body>
-	<form action="" method="post" th:object=${users}>
+<header>
+<h1>ユーザー追加</h1>
+</header>                                  <!-- ドメインのuser -->
+	<form action="" method="post" th:object=${user}>
+		<p th:errors="*{name}"></p>
 		<p>
-			名前 <input type="text" th:field=*{name} />
+			名前 <input type="text" th:field="*{name}"/>
 		</p>
+		<input th:type="submit"  value="登録"/>
 		<p>※アカウント名ではなく登録したい人の名前を入力しましょう！</p>
 	</form>
-	<p><a th:href="@{/users/add}">追加する</a></p>
+	<p><a th:href="@{/user}">リストに戻る</a></p>
+	<p><a th:href="@{/}">ホームに戻る</a></p>
 </body>
 </html>
