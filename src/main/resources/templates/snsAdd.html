@@ -8,26 +8,28 @@
 	<header>
 		<h1>SNS情報追加</h1>
 	</header>
-	<form action="" method="post" th:object="${UserSns}">
-	<p>SNS名
-	<select th:field="*{snsName}">
-                <option value="YouTube">YouTube</option>
-                <option value="X">X(旧Twitter)</option>
-                <option value="FaceBook">FaceBook</option>
-                <option value="Instagram">Instagram</option>
-            </select>
-	</p>
-	<p>URL
-		<input type="url" th:field=*{url} />
-	</p>
-	<p>アカウント名
-		<input type="text" th:field="*{accountName}" />
-	</p>
-	<p>ナンバー
-	<input type="number" th:field="*{userId}" />
-	</p>
+	<form action="" method="post" th:object="${userSns}">
+		<p>SNS名
+			 <select th:field="*{snsName}">
+				<option value="YouTube">YouTube</option>
+				<option value="X">X(旧Twitter)</option>
+				<option value="FaceBook">FaceBook</option>
+				<option value="Instagram">Instagram</option>
+			</select>
+		</p>
+		<p>URL
+			<input type="url" th:field="*{url}" />
+		</p>
+		<p>アカウント名
+			<input type="text" th:field="*{accountName}" />
+		</p>
+		<p>ナンバー
+			<input type="number" th:field="*{userId}" />
+		</p>
+		<input type="submit" value="追加" />
 	</form>
-	<input type="submit" value="追加" />
-	<p><a th:href="@{/}"></a></p>
+	<p>
+		<a th:href="@{/}">ホームに戻る</a>
+	</p>
 </body>
 </html>

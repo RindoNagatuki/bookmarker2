@@ -12,6 +12,6 @@ public class UserSns {
 	
 	private String url;
 	private String AccountName;
-	@NotBlank(message = "整数で入力してください")
+	
 	private Integer userId;
 }

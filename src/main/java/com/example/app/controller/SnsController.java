@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.app.domain.UserSns;
@@ -25,7 +26,7 @@ public class SnsController {
 	}
 
 	@PostMapping("/sns")
-	public String snsAddPage(@Valid UserSns userSns, Errors errors) throws Exception {
+	public String snsAddPage(@Valid @ModelAttribute UserSns userSns, Errors errors) throws Exception {
 		if (errors.hasErrors()) {
 			return "snsAdd";
 		}
@@ -34,3 +35,4 @@ public class SnsController {
 
 	}
 }
+// /snsを単体で表示させる

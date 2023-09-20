@@ -9,8 +9,10 @@
 	<header>
 		<h1>ユーザーリスト</h1>
 	</header>
-	<ul th:object="${user}">
-		<li th:field=*{name}></li>	
+	<ul th:each="user: ${users}" th:object="${user}">
+		<li>
+			<a th:href="@{/user/show/(id=*{id})}" th:text=*{name}></a>
+		</li>	
 	</ul>
 	<p><a th:href="@{/}">ホームに戻る</a></p>
 	<p><a th:href="@{/user/add}">新規追加する</a></p>

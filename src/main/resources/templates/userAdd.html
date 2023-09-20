@@ -8,8 +8,8 @@
 <body>
 <header>
 <h1>ユーザー追加</h1>
-</header>                                  <!-- ドメインのuser -->
-	<form action="" method="post" th:object=${user}>
+</header>                                  <!-- ドメインと連携したコントローラー内のuser -->
+	<form action="/user/add" method="post" th:object=${user}>
 		<p th:errors="*{name}"></p>
 		<p>
 			名前 <input type="text" th:field="*{name}"/>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.mapper.UserMapper">
+	<!-- ユーザーネームリスト取得 -->
+	<select id="selectAll"
+		resultType="User">
+		SELECT * FROM users;
+	</select>
+	
+	<!-- ユーザーの登録 -->
+	<insert id="add" parameterType="User">
+		INSERT INTO users (name) VALUES
+		(#{name})
+	</insert>
+	<!--ユーザー登録内容一覧(個人)-->
+	<select id="show" resultType="UserSns">
+		SELECT * FROM users
+		LEFT JOIN user_sns
+		ON users.id = user_sns.user_id
+		WHERE users.id = #{id};
+	</select>
+</mapper>
