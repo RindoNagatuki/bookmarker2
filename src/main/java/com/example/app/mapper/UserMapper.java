@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.app.domain.User;
+import com.example.app.domain.UserSns;
 
 @Mapper
 public interface UserMapper {
@@ -17,5 +18,5 @@ public interface UserMapper {
 	
 	
 	//登録内容一覧の表示
-	void show();
+	List<UserSns> show();
 }
