@@ -9,20 +9,20 @@
 	<header>
 		<h1>ユーザー個別閲覧</h1>
 	</header>
-	<table>
+	<table border="1">
 		<tr>
 			<th>SNS名</th>
 			<th>URL</th>
 			<th>アカウントネーム</th>
 		</tr>
-		<tr th:each="userSns : ${userSns}" th:object="${userSns}">
-			<td th:text="*{snsName}"></td>
-			<td th:text="*{url}"></td>
-			<td th:text="*{accountName}"></td>
+		<tr th:each="sns : ${user.snsList}">
+			<td th:text="${sns.snsName}"></td>
+			<td th:text="${sns.url}"></td>
+			<td th:text="${sns.accountName}"></td>
 		</tr>
 	</table>
 	<p>
-		<a th:href="@{/sns}">追加する</a>
+		<a th:href="@{/snsAdd}">追加する</a>
 	</p>
 	<p>
 		<a th:href="@{/users}">リストに戻る</a>

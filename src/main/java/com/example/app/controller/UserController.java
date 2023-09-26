@@ -52,10 +52,9 @@ public class UserController {
 	//登録内容個別表示
 	//マッパーを使ってSNS情報登録内容を取得
 	@GetMapping("/user/show/{id}")
-	public String userShowPage(
-			@PathVariable("id") int id, User user,Model model) {
-		User user = mapper.selectById(id);
-		System.out.println(user);
+	public String userShowPage(@PathVariable("id") int id, Model model) {
+		System.out.println(mapper.selectById(id));
+		model.addAttribute("user", mapper.selectById(id));
 		return "userShow";
 	}
 
