@@ -2,28 +2,33 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>U&Lbookmarker</title>
+<title>U&L Bookmarker</title>
 </head>
 <body>
- <!--ユーザー個別表示  -->
+	<!--ユーザー個別表示  -->
 	<header>
 		<h1>ユーザー個別閲覧</h1>
 	</header>
-	<h1 th:object="${userSns}"></h1>
 	<table>
-	<tr>
-		<th>SNS名</th>
-		<th>URL</th>
-		<th>アカウントネーム</th>
-	</tr>
-	<tr>
-		<td th:field="*{snsName}"></td>
-		<td th:field="*{url}"></td>
-		<td th:field="*{accountName}"></td>
-	</tr>
+		<tr>
+			<th>SNS名</th>
+			<th>URL</th>
+			<th>アカウントネーム</th>
+		</tr>
+		<tr th:each="userSns : ${userSns}" th:object="${userSns}">
+			<td th:text="*{snsName}"></td>
+			<td th:text="*{url}"></td>
+			<td th:text="*{accountName}"></td>
+		</tr>
 	</table>
-	<p><a th:href="@{/sns}">追加する</a></p>
-	<p><a th:href="@{/users}">リストに戻る</a></p>
-	<p><a th:href="@{/home}">ホームに戻る</a></p>
+	<p>
+		<a th:href="@{/sns}">追加する</a>
+	</p>
+	<p>
+		<a th:href="@{/users}">リストに戻る</a>
+	</p>
+	<p>
+		<a th:href="@{/}">ホームに戻る</a>
+	</p>
 </body>
 </html>

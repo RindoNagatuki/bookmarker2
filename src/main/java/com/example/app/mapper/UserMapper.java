@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.app.domain.User;
-import com.example.app.domain.UserSns;
 
 @Mapper
 public interface UserMapper {
@@ -16,7 +15,8 @@ public interface UserMapper {
 	//登録
 	void add(User user);
 	
+	// ユーザー1件分の情報を取ってくる→ SNSのリストも含まれている
+	User selectById(int id);
 	
-	//登録内容一覧の表示
-	List<UserSns> show();
+	
 }

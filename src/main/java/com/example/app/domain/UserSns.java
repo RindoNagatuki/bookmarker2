@@ -11,7 +11,7 @@ public class UserSns {
 	private String snsName;
 	
 	private String url;
-	private String AccountName;
+	private String accountName;
 	
 	private Integer userId;
 }

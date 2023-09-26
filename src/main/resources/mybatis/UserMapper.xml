@@ -2,22 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.app.mapper.UserMapper">
+
+	<resultMap id="joinResult" type="User" autoMapping="true">
+		<id column="id" property="id" />
+		<collection property="snsList" ofType="UserSns"
+			autoMapping="true" />
+	</resultMap>
+
 	<!-- ユーザーネームリスト取得 -->
-	<select id="selectAll"
-		resultType="User">
+	<select id="selectAll" resultType="User">
 		SELECT * FROM users;
 	</select>
-	
+
 	<!-- ユーザーの登録 -->
 	<insert id="add" parameterType="User">
 		INSERT INTO users (name) VALUES
 		(#{name})
 	</insert>
-	<!--ユーザー登録内容一覧(個人)-->
-	<select id="show" resultType="UserSns">
-		SELECT * FROM users
+	<!-- SNS情報を一件分表示 -->
+	<select id="selectById" parameterType="int"
+		resultMap="joinResult">
+		SELECT
+		users.id, users.name ,
+		user_sns.sns_name, user_sns.url, user_sns.account_name
+		FROM users
 		LEFT JOIN user_sns
 		ON users.id = user_sns.user_id
 		WHERE users.id = #{id};
 	</select>
+
 </mapper>
