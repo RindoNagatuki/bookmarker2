@@ -5,19 +5,26 @@ html {
 	background: linear-gradient(to top, rgba(180, 175, 217, 0.7) 0%,
 		rgba(151, 217, 225, 0.7) 100%), url(test_img.jpg);
 	background-repeat: round;
-	background-position: center;
+	
 }
+form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-h1 {
-	color: #00f;
+}
+h1{
+	color: #4f4fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
-p {
+a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-weight: bolder;
+	font-weight: bolder;	
+}
+body{
+	background-image: url(./src/main/resources/static/img/1489843.jpg);
 }

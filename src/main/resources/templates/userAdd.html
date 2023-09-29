@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <title>U&L Bookmarker</title>
+<link rel="stylesheet" th:href="@{/css/userAdd.css}" />
+<link rel="stylesheet" href="/src/main/resources/static/css/userAdd.css" />
 </head>
 <!-- フォローユーザー登録 -->
 <body>
@@ -14,7 +16,9 @@
 		<p>
 			名前 <input type="text" th:field="*{name}"/>
 		</p>
-		<input th:type="submit"  value="登録"/>
+		<div>
+		<input class=button th:type="submit"  value="登録"/>
+		</div>
 		<p>※アカウント名ではなく登録したい人の名前を入力しましょう！</p>
 	</form>
 	<p><a th:href="@{/user}">リストに戻る</a></p>

@@ -5,17 +5,28 @@ html {
 	background: linear-gradient(to top, rgba(180, 175, 217, 0.7) 0%,
 		rgba(151, 217, 225, 0.7) 100%), url(test_img.jpg);
 	background-repeat: round;
-	background-position: center;
 }
 
-h1 {
-	color: #00f;
+form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-p {
+div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #4f4fff;
+}
+
+a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
