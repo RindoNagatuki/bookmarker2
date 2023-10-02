@@ -36,5 +36,10 @@ public class SnsController {
 		return "redirect:/user";
 		
 	}
+//	@GetMapping("/sns/delete/{id}")
+//	public String delete(@PathVariable int id ,RedirectAttributes rd) {
+//		mapper.snsDelete(id);
+//		rd.addFlashAttribute("statusMessage", "ユーザーを削除しました。");
+//			return "redirect:/user";
 	
 }

@@ -8,5 +8,9 @@
 		INSERT INTO user_sns (sns_name, url, account_name, user_id) VALUES
 		(#{snsName},#{url},#{accountName},#{userId});
 	</select>
+	
+	<select id="snsDelete" parameterType="int">
+	   DELETE FROM user_sns WHERE id = #{id}
+	</select>
 
 </mapper>
