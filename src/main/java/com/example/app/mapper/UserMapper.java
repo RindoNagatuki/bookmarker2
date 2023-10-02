@@ -18,5 +18,9 @@ public interface UserMapper {
 	// ユーザー1件分の情報を取ってくる→ SNSのリストも含まれている
 	User selectById(int id);
 	
+	//削除
+	void delete(int id);
+
 	
+    
 }

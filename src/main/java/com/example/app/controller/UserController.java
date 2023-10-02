@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.app.domain.User;
 import com.example.app.mapper.UserMapper;
@@ -57,5 +58,18 @@ public class UserController {
 		model.addAttribute("user", mapper.selectById(id));
 		return "userShow";
 	}
+	
+	//削除
+	@GetMapping("/user/delete/{id}")
+	public String delete(@PathVariable int id ,RedirectAttributes rd) {
+		mapper.delete(id);
+		rd.addFlashAttribute("statusMessage", "ユーザーを削除しました。");
+			return "redirect:/user";
+		}
+	
+
+	
+	
+	
 
 }
