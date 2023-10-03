@@ -9,7 +9,7 @@
 <body>
 	<!--ユーザー個別表示  -->
 	<header>
-		<h1>ユーザー個別閲覧</h1>
+		<h1>ユーザー個別一覧</h1>
 	</header>
 	<table border="1">
 		<tr>
@@ -19,8 +19,11 @@
 		</tr>
 		<tr th:each="sns : ${user.snsList}">
 			<td th:text="${sns.snsName}"></td>
-			<td th:text="${sns.url}"></td>
+			<td><a th:text="${sns.url}" th:href="@{sns.url}"></a></td>
 			<td th:text="${sns.accountName}"></td>
+			<td>
+            <a th:href="@{/sns/delete/{id}/{userId}(id=${sns.id}, userId=${user.id})}" onclick="return confirm('削除してもよろしいですか？')">削除する</a>
+        </td>
 		</tr>
 	</table>
 	<p>

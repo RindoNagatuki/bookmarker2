@@ -61,13 +61,11 @@ public class UserController {
 	
 	//削除
 	@GetMapping("/user/delete/{id}")
-	public String delete(@PathVariable int id ,RedirectAttributes rd) {
+	public String snsDelete(@PathVariable int id ,RedirectAttributes rd) {
 		mapper.delete(id);
 		rd.addFlashAttribute("statusMessage", "ユーザーを削除しました。");
 			return "redirect:/user";
 		}
-	
-
 	
 	
 	

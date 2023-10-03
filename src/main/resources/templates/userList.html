@@ -13,16 +13,16 @@
 		<h1>ユーザーリスト</h1>
 	</header>
 	<ul th:each="user: ${users}" th:object="${user}">
-		<li><a th:href="@{/user/show/{id}(id=*{id})}" th:text=*{name}></a>
+		<li><a th:href="@{/user/show/{id}(id=*{id})}"th:text=*{name}></a>
 		<a class="btn btn-primary"
 		th:href="@{/user/delete/{id}(id=*{id})}">削除</a>
 		</li>
 	</ul>
 	<p>
-		<a th:href="@{/}">ホームに戻る</a>
+		<a th:href="@{/user/add}">新規追加する</a>
 	</p>
 	<p>
-		<a th:href="@{/user/add}">新規追加する</a>
+		<a th:href="@{/}">ホームに戻る</a>
 	</p>
 
 </body>

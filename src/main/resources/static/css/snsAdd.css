@@ -28,3 +28,10 @@ a{
 body{
 	background-image: url(./src/main/resources/static/img/1489843.jpg);
 }
+
+p#Noat{
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	font-weight: bolder;
+}

@@ -21,6 +21,8 @@ public interface UserMapper {
 	//削除
 	void delete(int id);
 
+
+
 	
     
 }

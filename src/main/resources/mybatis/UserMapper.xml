@@ -6,7 +6,9 @@
 	<resultMap id="joinResult" type="User" autoMapping="true">
 		<id column="id" property="id" />
 		<collection property="snsList" ofType="UserSns"
-			autoMapping="true" />
+			autoMapping="true">
+			<id column="sns_id" property="id" />
+		</collection>
 	</resultMap>
 
 	<!-- ユーザーネームリスト取得 -->
@@ -19,20 +21,25 @@
 		INSERT INTO users (name) VALUES
 		(#{name})
 	</insert>
+	
 	<!-- SNS情報を一件分表示 -->
 	<select id="selectById" parameterType="int"
 		resultMap="joinResult">
 		SELECT
-		users.id, users.name ,
-		user_sns.sns_name, user_sns.url, user_sns.account_name
+		users.id, users.name,
+		user_sns.id AS sns_id,
+		user_sns.sns_name, user_sns.url,
+		user_sns.account_name
 		FROM users
 		LEFT JOIN user_sns
-		ON users.id = user_sns.user_id
+		ON users.id =
+		user_sns.user_id
 		WHERE users.id = #{id};
 	</select>
+	
 	<select id="delete">
 		DELETE FROM users WHERE id =#{id}
 	</select>
-	
+
 </mapper>
 	

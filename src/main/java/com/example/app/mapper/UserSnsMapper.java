@@ -9,8 +9,11 @@ public interface UserSnsMapper {
 
 	//登録
 	void snsAdd(UserSns userSns);
-	
+
+	//削除
 	void snsDelete(int id);
+	
+	
 
 	
 	
