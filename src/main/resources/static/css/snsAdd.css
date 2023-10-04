@@ -34,4 +34,6 @@ p#Noat{
 	justify-content: center;
 	align-items: baseline;
 	font-weight: bolder;
+	 flex-direction: column;
 }
+

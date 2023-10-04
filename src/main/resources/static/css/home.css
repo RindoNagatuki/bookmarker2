@@ -8,16 +8,22 @@ html {
 	background-position: center;
 }
 
-h1 {
-	color: #00f;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
-p {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bolder;
+	h1 {
+		color: #00f;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	p {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bolder;
+	}
+
+	@media (max-width:767px) {
+    html{
+        flex-direction: column;
+    }
 }
